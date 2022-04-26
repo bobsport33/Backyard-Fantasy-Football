@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Ubuntu:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles/styles.css') }}"
+    />
+    <title>BFF</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Backyard Fantasy-Football</h1>
+      <h3 class="header__heading3">Data to give your fantasy team the edge!</h3>
+      <div class="header-btns">
+        <buttton class="btn btn-header">Sign-up Now!</buttton>
+        <buttton class="btn btn-header">Log In</buttton>
+      </div>
+    </header>
+    <section class="cta">
+      <h2 class="cta__heading">Why use Backyard Fantasy-Football?</h2>
+      <div class="cta__description">
+        <p class="cta__p">
+          What wins fantasy football championships? Grit? Luck? Mind-games with
+          your league opponents? As a fantasy manager you probably wish you
+          could just draft Pablo Sanchez from the Backyard Football game with
+          the first pick in your league and automatically win championships.<br /><br />
+          Unfortunately, even the best fantasy football players do not put up
+          the numbers we saw from our favorite videogame speedster. That is
+          where data analytics comes into play. We identify players that have
+          more upside and potential based off the numbers, and share those
+          results with you! With the advantages you gain from picking the
+          players our analytics pinpoint, your team will average enough points
+          that you will not have a need for a fictional superstar like Pablo.
+        </p>
+        <div class="img_cluster">
+          <img
+            src="../static/img/football-2.jpg"
+            alt="Pablo Sanchez"
+            class="cta__img cta__img-1"
+          />
+          <img
+            src="../static/img/pablo2.jpg"
+            alt="Football"
+            class="cta__img cta__img-2"
+          />
+          <img
+            src="../static/img/o-line-2.jpg"
+            alt="Offensive Line"
+            class="cta__img cta__img-3"
+          />
+        </div>
+      </div>
+      <button class="btn btn-cta">7-Day Free Trial</button>
+    </section>
+
+    <section class="target-share-data">
+      <h2 class="target_share_heading">Analytics lead to Champships</h2>
+      <h4 class="target_share_heading__4">Top 40 Players by Target Share</h4>
+      <ul class="target-share-description">
+        <li class="target-share-description__text">
+          What is Target Share? How does it help you determine which players to
+          draft? Or what player is the best to target in a trade? At Backyard
+          Fantasy-Football we do not just crunch the numbers, but also explain
+          the purpose of the data. Data without understanding will not help you
+          succeed, and that is what a lot of other sites do. They give you tons
+          of data without any explation. Here is an example of what Backyard
+          Fantasy-Football can do for you!
+        </li>
+        <li class="target-share-description__li">
+          <strong>Target Share- </strong>measures the percentage of all passing
+          attempts directed at a particular player. This is a key piece of data
+          for fantasy owners, as it shows the expected usage of a player.
+          Players with a higher target share will generally produce more points
+          that those with a lower percentage.
+        </li>
+        <li class="target-share-description__li">
+          <strong>Team Pass Attmept- Season- </strong> Number of pass attempts
+          from a team. Having a player with a high target share is definetly a
+          benefit, however, a player that has a slightly lower target share may
+          be more vaulable if their offense makes a significantly larger number
+          of pass attempts per game.
+        </li>
+        <li class="target-share-description__li">
+          <strong>Player Pass Attmept- Season- </strong> Number of pass attempts
+          that target the listed players
+        </li>
+      </ul>
+
+      {% for table in tables %} {{ table|safe }} {% endfor %}
+    </section>
+
+    <footer class="footer">
+      <ul class="footer_list">
+        <a class="footer_list__item" href="#">Home</a>
+        <a class="footer_list__item" href="#">About Us</a>
+        <a class="footer_list__item" href="#">Contact Us</a>
+        <a class="footer_list__item" href="#">Log In</a>
+      </ul>
+      <!-- social icons -->
+      <div class="social">
+        <ion-icon class="social_icons" name="logo-facebook"></ion-icon>
+        <ion-icon class="social_icons" name="logo-instagram"></ion-icon>
+        <ion-icon class="social_icons" name="logo-twitter"></ion-icon>
+        <ion-icon class="social_icons" name="logo-youtube"></ion-icon>
+      </div>
+
+      <p class="copyright">©Copyright Backyard Fantasy-Football 2022</p>
+    </footer>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
